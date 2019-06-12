@@ -1,28 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>game_Guess_who_stars</title>
-    <script src="app.js"></script>
-    <link rel="stylesheet" href="stylesheet.css">
+    <script src="./js/app.js" type="module"></script>
+    <link rel="stylesheet" href="./styles/stylesheet.css" />
+  </head>
+
+  <body>
+    <div id="popup">
+      <h2 class="title gameover">Game Over</h2>
+      <button id="btn_play_again" class="btn">play again ?</button>
+      <img id="popup_img" src="media/img/you_win.PNG" alt="pop_up" />
+    </div>
+
+    <h1 class="title main">Guess Who</h1>
+    <h2 class="title sub">Stars</h2>
     
-</head>
+    <!-- <button id="change_mask_items_pos">change mask item pos</button> -->
+    <div id="action_widgets">
 
-<body>
-    <input class="Starter"
-    type="button"
-    value="start Game">
+      <h3 id="show_round" class="is-hidden"></h3>
+      <h3 id="show_score" class="is-hidden"></h3>
 
-        <div id ="name_star" class="boxes">
-            <h1>Guess Who </h1>
-            <h2>Stars</h2>
+      <input
+        id="starter_btn"
+        class="btn starter"
+        type="button"
+        value="start game"
+      />
+      <div id="response_box">
+            <input
+            id="text_response"
+            class="answer is-hidden"
+            type="text"
+            placeholder="write answer here (name lastname)"
+          />
+          <button id="btn_response" class="is-hidden btn">ok</button>
+      </div>
+    </div>
+
+    <div id="game_board" class="is-hidden">
+      <div id="guessName"></div>
+
+      <div class="image-wrap">
+        <img id="current_star" />
+        <div class="mask">
+          <div id="mask1" class="mask-item"></div>
+          <div id="mask2" class="mask-item"></div>
+          <div id="mask3" class="mask-item"></div>
+          <div class="mask-item"></div>
         </div>
-        <div class="star_1 star">star1</div>
-        <div class="star_2 star">star 2</div>
-        <div class="star_3 star">star 3</div>
-        <div class="star_4 star">star 4</div>
-        <div class="star_5 star">star 5</div>
-</body>
+      </div>
+    </div>
+
+    <!-- <div id="name_star" class="boxes">
+      <img id="current_star" />
+    </div> -->
+  </body>
 </html>
