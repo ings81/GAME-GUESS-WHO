@@ -1,0 +1,193 @@
+* {
+  text-align: center;
+  color: #0e0d19;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.title.main {
+  margin-bottom: 20px;
+}
+.title.sub {
+  margin: 0 auto 10px;
+}
+.btn {
+    outline: none;
+    background: darkgray;
+    color: white;
+    padding: 10px;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+/*-----------------------------------
+----------BODY---------------
+---------------------------------*/
+body {
+  background: url("./../media/img/stars.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 30px;
+  min-height: 100vh;
+  position: relative;
+}
+.starter {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  size: 50px;
+  background-color: goldenrod;
+  border-radius: 10px;
+  align-items: flex-end;
+}
+
+h1 {
+  text-decoration: underline overline;
+  margin-top: 0px;
+  text-align: center;
+}
+
+/*-------------------------------------
+masquer la photo
+---------------------------------------*/
+.image-wrap {
+  display: inline-block;
+  position: relative;
+}
+
+.image-wrap .mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.mask .mask-item {
+    transition: all 1s linear;
+    cursor: pointer;
+}
+
+#mask1 {
+    background: goldenrod;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+}
+#mask2 {
+    background: goldenrod;
+    border-bottom: 1px solid;
+}
+#mask3 {
+    background: goldenrod;
+    border-right: 1px solid;
+}
+
+
+/*-------------------------------------
+---------------------------------------*/
+#action_widgets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#action_widgets .btn {
+  max-width: 220px;
+  margin-bottom: 20px;
+}
+
+#action_widgets .answer {
+  width: 280px;
+  height: 18px;
+  padding: 10px;
+  outline: none;
+}
+
+/*-------------------------------------
+---------------------------------------*/
+
+#guessName {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#text_response {
+  align-items: center;
+}
+/*------------------------------------------
+POP UP
+--------------------------------------------*/
+
+#game_board:not(.is-hidden) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+}
+/*------------------------------------------
+POP UP
+--------------------------------------------*/
+
+#popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 1s linear;
+}
+
+#popup.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+#popup #btn_play_again {
+  margin: 40px auto;
+}
+
+#popup_img {
+  transition: 0.3s;
+  display: flex;
+  z-index: 1;
+}
+
+/* #my_img:hover {opacity: 0;} */
+
+#starter_btn {
+    margin-top: 20px;
+}
+
+#img_02 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  position: absolute;
+  z-index: 2;
+}
+/* #img_02:hover {opacity: 0;} */
+
+#name_star {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
