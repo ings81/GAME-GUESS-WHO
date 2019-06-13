@@ -1,5 +1,5 @@
 import stars from "./stars.js";
-// console.log(stars.length);
+//  console.log(stars.length);
 
 const pointsRule = {
   base: 40,
@@ -53,7 +53,7 @@ function verifyUserResponse() {
 
 function disappearMask() {
   document.getElementsByClassName(".mask").forEach(function($mask) {
-    if (mask.style.backgroundColor === " green") {
+    if (mask.style.backgroundColor === "goldenrod") {
       $mask.style.visibility = "visible";
     } else {
       $mask.style.visibility = "hidden";
@@ -137,7 +137,3 @@ btnResponse.onclick = function() {
   verifyUserResponse();
   goToNextRound();
 };
-// créer 4 carrés de dimension égal dont un invisible
-// les superposer sur la photo 800x800
-// que les carrés de différentes couleurs se déplacent aléatoirement à chaque changement de photo
-// pouvoir cliquer sur le carré choisi pour voir davantage l'image apparaitre, retire des points plus tu retires de carrés

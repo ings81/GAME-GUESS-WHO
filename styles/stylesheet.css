@@ -1,6 +1,12 @@
+@font-face{
+  font-family:blk;
+  src: url(./Blkchanr.ttf);
+}
+
 * {
+  font-family: blk;
   text-align: center;
-  color: #0e0d19;
+  color:goldenrod;
 }
 
 .btn {
@@ -25,11 +31,29 @@
     border-radius: 0.4rem;
     cursor: pointer;
 }
+/*------------------------------
+--------HEADER----------
+---------------------*/
+header{
+  display: flex;
+  font-size: 40px;
+  background-position: cover;
+  position: relative;
+  
+}
+.h1 {
+  text-decoration: underline overline;
+  text-align: center;
+  color:goldenrod;
+}
+
+
+
 /*-----------------------------------
 ----------BODY---------------
 ---------------------------------*/
 body {
-  background: url("./../media/img/stars.jpg");
+  background: url("./../media/img/gala.png");
   background-size: cover;
   background-repeat: no-repeat;
   font-size: 30px;
@@ -49,11 +73,7 @@ body {
   align-items: flex-end;
 }
 
-h1 {
-  text-decoration: underline overline;
-  margin-top: 0px;
-  text-align: center;
-}
+
 
 /*-------------------------------------
 masquer la photo
@@ -124,7 +144,13 @@ masquer la photo
 
 #text_response {
   align-items: center;
+  font-size: 30px;
 }
+
+
+
+  
+
 /*------------------------------------------
 POP UP
 --------------------------------------------*/
@@ -134,10 +160,8 @@ POP UP
   justify-content: center;
   align-items: center;
   padding-top: 40px;
+  border-block-color: black;
 }
-/*------------------------------------------
-POP UP
---------------------------------------------*/
 
 #popup {
   position: absolute;
@@ -169,25 +193,11 @@ POP UP
   z-index: 1;
 }
 
-/* #my_img:hover {opacity: 0;} */
-
-#starter_btn {
-    margin-top: 20px;
+/*------------------------------------------
+FOOTER
+--------------------------------------------*/
+h4{
+  text-decoration: underline overline;
 }
 
-#img_02 {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-  display: flex;
-  position: absolute;
-  z-index: 2;
-}
-/* #img_02:hover {opacity: 0;} */
 
-#name_star {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

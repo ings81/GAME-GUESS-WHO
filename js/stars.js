@@ -5,6 +5,21 @@ export default [
       "https://res.cloudinary.com/inga-bacher/image/upload/v1560178976/GUESSWHO/donaldtrump_pszhaf.jpg"
   },
   {
+    name: "Rafael Nadal",
+    path:
+      "https://res.cloudinary.com/inga-bacher/image/upload/v1560412678/GUESSWHO/NADAL_ew93xk.jpg"
+  },
+  {
+    name: "Michelle Obama",
+    path:
+      "https://res.cloudinary.com/inga-bacher/image/upload/v1560412934/GUESSWHO/michelle-obama1_kfsiah.jpg"
+  },
+  {
+    name: "Sébastien Vettel",
+    path:
+      "https://res.cloudinary.com/inga-bacher/image/upload/v1560413174/GUESSWHO/vettel_nslp8e.jpg"
+  },
+  {
     name: "Mickey Mouse",
     path:
       "https://res.cloudinary.com/inga-bacher/image/upload/v1560179280/GUESSWHO/mickeymouse_s7r7s2.jpg"
