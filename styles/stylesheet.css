@@ -21,7 +21,8 @@
   margin-bottom: 20px;
 }
 .title.sub {
-  margin: 0 auto 10px;
+  background: #00000042;
+  margin: 15px auto 30px;
 }
 .btn {
     outline: none;
@@ -37,9 +38,7 @@
 header{
   display: flex;
   font-size: 40px;
-  background-position: cover;
   position: relative;
-  
 }
 .h1 {
   text-decoration: underline overline;
@@ -59,6 +58,7 @@ body {
   font-size: 30px;
   min-height: 100vh;
   position: relative;
+  margin: 0;
 }
 .starter {
   border: 0;
@@ -73,7 +73,13 @@ body {
   align-items: flex-end;
 }
 
-
+#intro_nav {
+  background: url(./../media/img/276_desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 260px;
+  width: 100%;
+}
 
 /*-------------------------------------
 masquer la photo
@@ -113,6 +119,11 @@ masquer la photo
     border-right: 1px solid;
 }
 
+
+#current_star {
+  height: 100%;
+  display: block;
+}
 
 /*-------------------------------------
 ---------------------------------------*/
@@ -160,7 +171,6 @@ POP UP
   justify-content: center;
   align-items: center;
   padding-top: 40px;
-  border-block-color: black;
 }
 
 #popup {
@@ -174,6 +184,8 @@ POP UP
   justify-content: center;
   align-items: center;
   opacity: 0;
+  background: #000000c4;
+  height: 100vh;
   z-index: -1;
   transition: opacity 1s linear;
 }
@@ -191,6 +203,12 @@ POP UP
   transition: 0.3s;
   display: flex;
   z-index: 1;
+  max-width: 200px;
+}
+
+img#title_gameover{
+  width: 300px;
+  height:auto;
 }
 
 /*------------------------------------------

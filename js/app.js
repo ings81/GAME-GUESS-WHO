@@ -1,5 +1,6 @@
 import stars from "./stars.js";
-//  console.log(stars.length);
+
+// var stars;
 
 const pointsRule = {
   base: 40,
@@ -15,9 +16,11 @@ var round = {
   maskClicks: 0
 };
 
-var playerPoints = 0;
+var playerPoints;
 
+const popup = document.getElementById("popup");
 const btnStart = document.getElementById("starter_btn");
+const btnRestart = document.getElementById("btn_play_again");
 const gameBoard = document.getElementById("game_board");
 const textResponse = document.getElementById("text_response");
 const btnResponse = document.getElementById("btn_response");
@@ -28,21 +31,34 @@ const starPict = document.getElementById("current_star");
 const masks = document.getElementsByClassName("mask-item");
 var currentStar = null;
 
+function gameOver(mode) {
+  const img = popup.querySelector("img");
+  if (mode === "loose") img.src = "./media/img/loose.png";
+  else img.src = "./media/img/you_win.PNG";
+  popup.classList.add("is-active");
+}
+
 function verifyUserResponse() {
-  console.log("current star ?", currentStar.name);
+  console.log(round);
+  // console.log("current star ?", currentStar.name);
   if (
     currentStar.name.toLowerCase().replace(" ", "") ===
     answerInput.value.toLowerCase().replace(" ", "")
   ) {
+    console.log("oui");
     // console.log("bonne réponse !!!");
     // console.log(round);
     // console.log(pointsRule[round.maskClicks]);
     playerPoints += pointsRule.base - pointsRule[round.maskClicks];
   } else {
-    console.log("mauvaise réponse, vous perdez tous vos acquis");
+    // console.log("mauvaise réponse, vous perdez tous vos acquis");
     playerPoints = 0;
+    if (round.maskClicks === 3) {
+      return gameOver("loose");
+    }
   }
-
+  goToNextRound();
+  answerInput.value = ""; // reset text input
   // 1 definir un input de type text en HTML (avec un id)
   // 2 depuis JS, selectionner cet input (par so id)
   // 3 ajouter un event listener sur cet input
@@ -61,7 +77,7 @@ function disappearMask() {
       mask.onclick = function() {
         displayImage();
       };
-      console.log("bon");
+      // console.log("bon");
     }
   });
 }
@@ -71,7 +87,6 @@ function displayImage() {
   currentStar = stars[number];
   starPict.src = currentStar.path;
   round.currentImageIndex = number;
-  console.log(currentStar);
   // 1 = recup l'image avec getElementById
   // 2 = affecter une variable img avec le result de getElementById
   // ci-dessus: c'est un OBJECT !!!
@@ -79,6 +94,12 @@ function displayImage() {
   // tu peux changer cette source (avec le signe = )
   // donc tu peux associer la src avec le path
   return currentStar;
+}
+
+function endGame() {
+  popup.classList.add("is-active");
+  resetMasks();
+  updateDisplay();
 }
 
 function updateDisplay() {
@@ -92,11 +113,12 @@ function goToNextRound() {
   stars.splice(round.currentImageIndex, 1); // check sur mdn la doc
   round.level++;
   round.maskClicks = 0;
-  resetMasks();
   updateDisplay();
+  if (stars.length === 0) return;
   setTimeout(function() {
+    resetMasks();
     displayImage();
-  }, 1000);
+  }, 2000);
 }
 
 function resetMasks(evt) {
@@ -120,6 +142,10 @@ function initMasks() {
 }
 
 function startGame() {
+  playerPoints = 0;
+  // stars = [...x];
+  // stars = stars.splice(0, 1);
+  popup.classList.remove("is-active");
   btnStart.classList.add("is-hidden");
   gameBoard.classList.remove("is-hidden");
   showRound.classList.remove("is-hidden");
@@ -133,7 +159,7 @@ function startGame() {
 
 // EVENT LISTENERS !!! on écoute les évènements sur les éléments HTML
 btnStart.onclick = startGame;
+btnRestart.onclick = startGame;
 btnResponse.onclick = function() {
   verifyUserResponse();
-  goToNextRound();
 };
