@@ -36,6 +36,9 @@ function gameOver(mode) {
   if (mode === "loose") img.src = "./media/img/loose.png";
   else img.src = "./media/img/you_win.PNG";
   popup.classList.add("is-active");
+  endGame();
+  resetMasks();
+  displayImage();
 }
 
 function verifyUserResponse() {
@@ -118,7 +121,7 @@ function goToNextRound() {
   setTimeout(function() {
     resetMasks();
     displayImage();
-  }, 2000);
+  }, 3000);
 }
 
 function resetMasks(evt) {
